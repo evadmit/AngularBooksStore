@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookDetailsComponent implements OnInit {
 
+  books: Array<string> = ['Apple', 'Orange', 'Banana'];
   constructor() { }
 
   ngOnInit() {

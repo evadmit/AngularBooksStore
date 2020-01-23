@@ -1,1 +1,54 @@
-<p>login works!</p>
+
+<mat-card [@fallIn]='state' class="login-container">
+   
+    <div class="input-container" *ngIf = "isShow">
+        <p>Login</p>
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="example@gmail.com">
+    </mat-form-field>
+ 
+        <mat-form-field appearance="outline">
+            <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+
+        <div class="input-container"  *ngIf = "!isShow">
+            <p>Register</p>
+            
+            <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
+                <input matInput placeholder="Name">
+              </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Email</mat-label>
+              <input matInput placeholder="example@gmail.com">
+            </mat-form-field>
+         
+                <mat-form-field appearance="outline">
+                    <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                  </mat-form-field>
+             
+ 
+                <mat-form-field appearance="outline">
+                    <input matInput placeholder="Confirm your password" [type]="hide ? 'password' : 'text'">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                  </mat-form-field>
+                </div>
+
+        <div class="buttons-container">
+            <button mat-stroked-button class="button" routerLink="/books-list"  *ngIf = "isShow">Login</button>
+            <button mat-stroked-button class="button" routerLink="/books-list"  *ngIf = "!isShow">Register</button>
+            <button mat-stroked-button class="button" (click) = switchForm()  *ngIf = "isShow">I'm new here</button>
+        </div>
+        
+</mat-card>

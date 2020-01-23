@@ -14,6 +14,7 @@ import { HeaderComponent } from './components/shared/header/header.component';
 import { AboutusComponent } from './components/shared/aboutus/aboutus.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { CustomMaterialModule } from './custom-material.module';
+import { BackendService } from './services/backend.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { CustomMaterialModule } from './custom-material.module';
     BrowserAnimationsModule,
     CustomMaterialModule
   ],
-  providers: [],
+  providers: [BackendService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

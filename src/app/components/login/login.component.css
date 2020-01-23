@@ -1,0 +1,43 @@
+
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+.input-container {
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .buttons-container {
+      
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+.button{
+    margin: 10px;
+}
+  .input-container > * {
+    width: 50%;
+  }
+  
+  .buttons-container > * {
+    width: 30%;
+  }
+  
+  .input-right-align {
+    text-align: right;
+  }
+  
+  input.input-right-align::-webkit-outer-spin-button,
+  input.example-right-align::-webkit-inner-spin-button {
+    display: none;
+  }
+  
+  input.input-right-align {
+    -moz-appearance: textfield;
+  }
