@@ -19,6 +19,7 @@ import { CustomMaterialModule } from './custom-material.module';
 import { BackendService } from './services/backend.service';
 import { StickyHeaderComponent } from './components/shared/sticky-header/sticky-header.component';
 import { BookCardItemComponent } from './components/shared/items/book-card-item/book-card-item.component';
+import { CartItemComponent } from './components/shared/items/cart-item/cart-item.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { BookCardItemComponent } from './components/shared/items/book-card-item/
     StickyHeaderComponent,
     AboutusComponent,
     FooterComponent,
-    BookCardItemComponent
+    BookCardItemComponent,
+    CartItemComponent
   ],
   imports: [
     FormsModule, 

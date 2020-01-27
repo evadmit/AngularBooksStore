@@ -1,0 +1,17 @@
+<mat-card class="example-card">
+    <mat-card-header>
+      <div md-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{cartItem.selectedBook.title}}</mat-card-title>
+      <mat-card-subtitle>{{cartItem.selectedBook.author}}</mat-card-subtitle>
+    </mat-card-header>
+    <img md-card-image src={{cartItem.selectedBook.image}} >
+    <mat-card-content>
+     
+      <div>
+        <p *ngIf="price"> 
+        {{price}}
+      </p>
+     
+    </div>
+    </mat-card-content>
+  </mat-card>

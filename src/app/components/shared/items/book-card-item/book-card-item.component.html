@@ -11,7 +11,7 @@
       </p>
       <div>
         <mat-card-actions>
-            <button class="cart-button" mat-button>  <mat-icon>add_shopping_cart</mat-icon>ADD</button>
+            <button class="cart-button" mat-button (click)="addToCart(item)">  <mat-icon>add_shopping_cart</mat-icon>ADD</button>
             <button mat-button (click)="displayDetails(item)">MORE</button>
          </mat-card-actions>
     </div>
