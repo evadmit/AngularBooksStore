@@ -1,1 +1,27 @@
-<p>book-details works!</p>
+
+<div class="card-container"
+  >
+ 
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div md-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{book.title}}</mat-card-title>
+      <mat-card-subtitle>{{book.price}}</mat-card-subtitle>
+      
+      <mat-card-subtitle>{{book.ganre}}</mat-card-subtitle>
+    </mat-card-header>
+    <img md-card-image src={{book.image}} >
+    <mat-card-content>
+      <p *ngIf="book" >
+
+        {{book.description}}
+    </p>
+      <div>
+        <mat-card-actions>
+            <button class="cart-button" mat-button>  <mat-icon>add_shopping_cart</mat-icon>ADD</button>
+          
+         </mat-card-actions>
+    </div>
+    </mat-card-content>
+  </mat-card>
+</div>

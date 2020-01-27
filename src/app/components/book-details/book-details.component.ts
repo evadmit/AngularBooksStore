@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import {Book} from '../../models/BookModels'
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-book-details',
   templateUrl: './book-details.component.html',
@@ -7,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookDetailsComponent implements OnInit {
 
-  books: Array<string> = ['Apple', 'Orange', 'Banana'];
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
+  book:Book;
+  private sub :any;
   ngOnInit() {
+   this.sub= this.route.params.subscribe((params: Book) => this.book = params);
+  console.log(this.book)
   }
-
+  ngOnDestroy() {
+    this.sub.unsubscribe();
+  }
 }

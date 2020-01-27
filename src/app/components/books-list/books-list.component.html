@@ -1,8 +1,10 @@
-<p>books-list works!</p>
 
-<div *ngFor="let book of books">
-<h3>
-    {{book}}
-</h3>
+<div class="card-deck-container"
+  fxLayout="row wrap" fxLayoutGap="32px" fxLayoutAlign="flex-start">
+  <ng-container *ngFor="let book of books">
+<book-card-item class="card-item" fxFlex="0 1 calc(33.3% - 32px)" [item]="book"  fxLayout="row" fxLayoutWrap>
+  
 
+</book-card-item>
+</ng-container>
 </div>

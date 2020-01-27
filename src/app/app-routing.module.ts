@@ -6,6 +6,8 @@ import { FooterComponent } from './components/shared/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
 import { BooksListComponent } from './components/books-list/books-list.component';
 import { BookDetailsComponent } from './components/book-details/book-details.component';
+import { RegisterComponent } from './components/register/register.component';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 
 
 const routes: Routes = [
@@ -13,7 +15,9 @@ const routes: Routes = [
 {path:'aboutus', component:AboutusComponent},
 {path:'books-list', component:BooksListComponent},
 {path:'book-details', component:BookDetailsComponent},
+{path:'shopping-cart', component:ShoppingCartComponent},
 {path:'login', component:LoginComponent},
+{path:'register', component:RegisterComponent},
 {path:'header', component: HeaderComponent},
 {path:'footer', component:FooterComponent},
 {path:'**', redirectTo:'/aboutus', pathMatch:'full'},

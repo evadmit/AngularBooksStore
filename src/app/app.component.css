@@ -1,0 +1,22 @@
+
+.apptitle{
+    padding: 15px;
+    text-decoration:none;color:#ffffff;}
+app-sticky-header {
+    
+    z-index: 1000;
+    box-shadow: 2px 0 0 2px rgba(0, 0, 0, 0.3);
+    color: white;
+    background-color: #3f51b5 ;
+    font-size: 2rem;
+    height: 75px;
+    display: flex;
+    align-items: center;
+  justify-content: space-between;
+  }
+  .nav-tool-items{
+      padding: 15px;
+  }
+  .content {
+    padding-top: 75px;
+  }

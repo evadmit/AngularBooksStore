@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +17,8 @@ import { AboutusComponent } from './components/shared/aboutus/aboutus.component'
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { CustomMaterialModule } from './custom-material.module';
 import { BackendService } from './services/backend.service';
+import { StickyHeaderComponent } from './components/shared/sticky-header/sticky-header.component';
+import { BookCardItemComponent } from './components/shared/items/book-card-item/book-card-item.component';
 
 @NgModule({
   declarations: [
@@ -26,10 +30,15 @@ import { BackendService } from './services/backend.service';
     BookDetailsComponent,
     AdminComponent,
     HeaderComponent,
+    StickyHeaderComponent,
     AboutusComponent,
-    FooterComponent
+    FooterComponent,
+    BookCardItemComponent
   ],
   imports: [
+    FormsModule, 
+    ReactiveFormsModule ,
+    FlexLayoutModule ,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

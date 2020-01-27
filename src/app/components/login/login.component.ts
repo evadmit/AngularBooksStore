@@ -4,9 +4,7 @@ import { moveIn, fallIn } from '../shared/router.animation';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
-  animations: [moveIn(),fallIn()],
-  host: {'[@moveIn]':''}
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
   state: string ='';
