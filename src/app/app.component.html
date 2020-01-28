@@ -2,12 +2,13 @@
 
 <app-sticky-header color="primary"> 
   <div>
-    <a href="https://www.positronx.io" target="_blank" class="apptitle">Books Store</a></div>
+    <a routerLink="books-list"  target="_blank" class="apptitle">Books Store</a></div>
   <span class="nav-tool-items">
     <a mat-button routerLink="login" routerLinkActive="mat-raised-button">Log in</a>
     <a mat-button  routerLink="register" routerLinkActive="mat-raised-button">Register</a>
     
-    <a  mat-button routerLink="shopping-cart">  <mat-icon>shopping_cart</mat-icon></a>
+    <a  mat-button   matBadge="{{itemsInCart}}" matBadgeColor="accent" routerLink="shopping-cart">  <mat-icon>shopping_cart</mat-icon></a>
+  
   </span></app-sticky-header>
 <div class="content">
 

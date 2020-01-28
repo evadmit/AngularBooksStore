@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { CartItem } from 'src/app/models/BookModels';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BackendService } from 'src/app/services/backend.service';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'cart-item',
@@ -12,13 +13,16 @@ export class CartItemComponent implements OnInit {
 
   @Input() cartItem: CartItem;
   price:string;
-  constructor(private _route: ActivatedRoute, private _router: Router, private backendService: BackendService) { }
+  constructor(private _route: ActivatedRoute, private _router: Router, private cartService: CartService) { }
 
   ngOnInit() {
-    var total = this.cartItem.quantity*this.cartItem.selectedBook.price;
-  this.price = "total: "+ this.cartItem.quantity + " x "+this.cartItem.selectedBook.price+" = "+total;
-  }
-
+    this.price =this.cartService.getSumForItem(this.cartItem);
+   }
+   
+   removeFromCart(){
+     console.log("removing")
+    this.cartService.removeFromCart(this.cartItem);
+   }
  
 
 }

@@ -1,17 +1,26 @@
 <mat-card class="example-card">
-    <mat-card-header>
-      <div md-card-avatar class="example-header-image"></div>
-      <mat-card-title>{{cartItem.selectedBook.title}}</mat-card-title>
-      <mat-card-subtitle>{{cartItem.selectedBook.author}}</mat-card-subtitle>
-    </mat-card-header>
-    <img md-card-image src={{cartItem.selectedBook.image}} >
-    <mat-card-content>
-     
-      <div>
-        <p *ngIf="price"> 
-        {{price}}
-      </p>
-     
+
+  <mat-card-actions>
+
+  </mat-card-actions>
+
+
+  <mat-card-content>
+    <div fxLayout="row" fxLayoutAlign="space-between stretch" class="remove-btn">
+      <h1>{{cartItem.selectedBook.title}}</h1>
+      <button mat-mini-fab (click)="removeFromCart()">
+        <mat-icon>clear</mat-icon>
+      </button>
     </div>
-    </mat-card-content>
-  </mat-card>
+
+    <img md-card-image src={{cartItem.selectedBook.image}}>
+
+
+    <div>
+      <h3 *ngIf="price">
+        {{price}}
+      </h3>
+
+    </div>
+  </mat-card-content>
+</mat-card>

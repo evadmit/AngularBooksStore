@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartItem } from 'src/app/models/BookModels';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -9,11 +10,20 @@ import { CartItem } from 'src/app/models/BookModels';
 export class ShoppingCartComponent implements OnInit {
 
   books: Array<CartItem> 
-  constructor() { }
+  totalPrice: number;
+  cart:  Array<CartItem> 
+  constructor(private cartService: CartService) { }
 
   ngOnInit() {
-    let cart:  Array<CartItem>  = JSON.parse( localStorage.getItem('cart'));
-    this.books = cart;
+
+    this.cartService.observeCart().subscribe((value) => {
+      this.books = value;
+    });
+  
+    this.cartService.observeSum().subscribe((value) => {
+      this.totalPrice = value;
+    });
+
     console.log("cart ", this.books)
   }
 
