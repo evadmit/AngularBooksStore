@@ -21,6 +21,7 @@ import { StickyHeaderComponent } from './components/shared/sticky-header/sticky-
 import { BookCardItemComponent } from './components/shared/items/book-card-item/book-card-item.component';
 import { CartItemComponent } from './components/shared/items/cart-item/cart-item.component';
 import { OrdersComponent } from './components/orders/orders.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { OrdersComponent } from './components/orders/orders.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    CustomMaterialModule
+    CustomMaterialModule,
+    HttpClientModule,
   ],
   providers: [BackendService],
   bootstrap: [AppComponent]

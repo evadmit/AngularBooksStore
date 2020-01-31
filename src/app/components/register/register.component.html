@@ -5,25 +5,27 @@
         <mat-card-title>Register</mat-card-title>
       </mat-card-header>
   
-      <form class="example-form">
+      <form class="example-form" >
   
         <mat-card-content>
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Name">
+            <input matInput placeholder="Name" [(ngModel)]="newUser.name" name="name" required>
           </mat-form-field>
   
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Email">
+            <input matInput placeholder="Email" [(ngModel)]="newUser.email" name="email" required>
           </mat-form-field>
   
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Password">
+            <input matInput placeholder="Password" [(ngModel)]="newUser.password" name="password" required>
           </mat-form-field>
 
-  
+          <mat-checkbox [(ngModel)]="isAuthor" name="role">Author</mat-checkbox>
+       
+
         </mat-card-content>
   
-        <button mat-stroked-button color="accent" class="btn-block" routerLink="/books-list">Register</button>
+        <button mat-stroked-button color="accent" class="btn-block" (click)="Register()">Register</button>
   
       </form>
     </mat-card>
