@@ -1,0 +1,130 @@
+{
+    "users": [
+      {
+        "email": "vicky@test.com",
+        "password": "Qwerty@123",
+        "isAdmin": true,
+        "id": 1
+      },
+      {
+        "email": "evadmit@gmail.com",
+        "password": "Qwerty@123",
+        "isAdmin": false,
+        "id": 2
+      }
+    ],
+    "books": [
+      {
+        "id": "2",
+        "bookCount": 0,
+        "price": "3333",
+        "image": "https://images-na.ssl-images-amazon.com/images/I/51NXWG-RplL._SX379_BO1,204,203,200_.jpg",
+        "isbn": "9781449331818",
+        "title": "Learning JavaScript Design Patterns",
+        "subtitle": "A JavaScript and jQuery Developer's Guide",
+        "author": "Addy Osmani",
+        "published": "2012-07-01T00:00:00.000Z",
+        "publisher": "O'Reilly Media",
+        "pages": 254,
+        "description": "With Learning JavaScript Design Patterns, you'll learn how to write beautiful, structured, and maintainable JavaScript by applying classical and modern design patterns to the language. If you want to keep your code efficient, more manageable, and up-to-date with the latest best practices, this book is for you."
+      },
+      {
+        "id": "3",
+        "bookCount": 5,
+        "price": "500",
+        "image": "https://cdn1.ozone.ru/multimedia/1010617388.jpg",
+        "isbn": "9781449365035",
+        "title": "Speaking JavaScript",
+        "subtitle": "An In-Depth Guide for Programmers",
+        "author": "Axel Rauschmayer",
+        "published": "2014-02-01T00:00:00.000Z",
+        "publisher": "O'Reilly Media",
+        "pages": 460,
+        "description": "Like it or not, JavaScript is everywhere these days-from browser to server to mobile-and now you, too, need to learn the language or dive deeper than you have. This concise book guides you into and through JavaScript, written by a veteran programmer who once found himself in the same position."
+      },
+      {
+        "id": "4",
+        "bookCount": 6,
+        "image": "https://www.oreilly.com/library/cover/9781491950289/360h/",
+        "price": "600",
+        "isbn": "9781491950296",
+        "title": "Programming JavaScript Applications",
+        "subtitle": "Robust Web Architecture with Node, HTML5, and Modern JS Libraries",
+        "author": "Eric Elliott",
+        "published": "2014-07-01T00:00:00.000Z",
+        "publisher": "O'Reilly Media",
+        "pages": 254,
+        "description": "Take advantage of JavaScript's power to build robust web-scale or enterprise applications that are easy to extend and maintain. By applying the design patterns outlined in this practical book, experienced JavaScript developers will learn how to write flexible and resilient code that's easier-yes, easier-to work with as your code base grows."
+      },
+      {
+        "id": "5",
+        "bookCount": 0,
+        "price": "230",
+        "image": "https://images-na.ssl-images-amazon.com/images/I/51gtBJztsTL._SX376_BO1,204,203,200_.jpg",
+        "isbn": "9781593277574",
+        "title": "Understanding ECMAScript 6",
+        "subtitle": "The Definitive Guide for JavaScript Developers",
+        "author": "Nicholas C. Zakas",
+        "published": "2016-09-03T00:00:00.000Z",
+        "publisher": "No Starch Press",
+        "pages": 352,
+        "description": "ECMAScript 6 represents the biggest update to the core of JavaScript in the history of the language. In Understanding ECMAScript 6, expert developer Nicholas C. Zakas provides a complete guide to the object types, syntax, and other exciting changes that ECMAScript 6 brings to JavaScript."
+      },
+      {
+        "id": "6",
+        "bookCount": 0,
+        "price": "400",
+        "image": "https://images-na.ssl-images-amazon.com/images/G/15/aplusautomation/vendorimages/01fb1917-2641-4a42-9f43-add42c76af79.png._CB526680932_.png",
+        "isbn": "9781491904244",
+        "title": "You Don't Know JS",
+        "subtitle": "ES6 & Beyond",
+        "author": "Kyle Simpson",
+        "published": "2015-12-27T00:00:00.000Z",
+        "publisher": "O'Reilly Media",
+        "pages": 278,
+        "description": "No matter how much experience you have with JavaScript, odds are you don�t fully understand the language."
+      },
+      {
+        "id": "7",
+        "bookCount": 0,
+        "price": "700",
+        "image": "https://images-na.ssl-images-amazon.com/images/I/41DP1fmJ5gL._SX302_BO1,204,203,200_.jpg",
+        "isbn": "9781449325862",
+        "title": "Git Pocket Guide",
+        "subtitle": "A Working Introduction",
+        "author": "Richard E. Silverman",
+        "published": "2013-08-02T00:00:00.000Z",
+        "publisher": "O'Reilly Media",
+        "pages": 234,
+        "description": "This pocket guide is the perfect on-the-job companion to Git, the distributed version control system. It provides a compact, readable introduction to Git for new users, as well as a reference to common commands and procedures for those of you with Git experience."
+      },
+      {
+        "id": "8",
+        "bookCount": 0,
+        "price": "800",
+        "image": "https://www.oreilly.com/library/cover/9781449337919/360h/",
+        "isbn": "9781449337711",
+        "title": "Designing Evolvable Web APIs with ASP.NET",
+        "subtitle": "Harnessing the Power of the Web",
+        "author": "Glenn Block, et al.",
+        "published": "2014-04-07T00:00:00.000Z",
+        "publisher": "O'Reilly Media",
+        "pages": 538,
+        "description": "Design and build Web APIs for a broad range of clients�including browsers and mobile devices�that can adapt to change over time. This practical, hands-on guide takes you through the theory and tools you need to build evolvable HTTP services with Microsoft�s ASP.NET Web API framework. In the process, you�ll learn how design and implement a real-world Web API."
+      },
+      {
+        "id": "TS0trJl",
+        "bookCount": 0,
+        "image": "",
+        "isbn": 0,
+        "author": "updated widget service",
+        "description": "rkr kt",
+        "pages": "254",
+        "price": "346",
+        "published": "2012-07-01T00:00:00.000Z",
+        "publisher": "O'Reilly Media",
+        "subtitle": "A JavaScript and jQuery Developer's Guide",
+        "title": "Learning JavaScript Design Patterns"
+      }
+    ]
+  }

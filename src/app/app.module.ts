@@ -20,6 +20,7 @@ import { BackendService } from './services/backend.service';
 import { StickyHeaderComponent } from './components/shared/sticky-header/sticky-header.component';
 import { BookCardItemComponent } from './components/shared/items/book-card-item/book-card-item.component';
 import { CartItemComponent } from './components/shared/items/cart-item/cart-item.component';
+import { OrdersComponent } from './components/orders/orders.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { CartItemComponent } from './components/shared/items/cart-item/cart-item
     AboutusComponent,
     FooterComponent,
     BookCardItemComponent,
-    CartItemComponent
+    CartItemComponent,
+    OrdersComponent
   ],
   imports: [
     FormsModule, 
