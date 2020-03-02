@@ -7,8 +7,13 @@ export class User{
 
 }
 
+export class LoginUser{
+    email: string;
+    password: string;
+}
+
 export enum Role {
-    admin,
+    admin  = 1,
     client,
     author
 }

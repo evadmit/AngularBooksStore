@@ -28,7 +28,7 @@ export class RegisterComponent implements OnInit {
     {
     this.newUser.role = Role.author}
    try {
-      var res=   (await this.http.post(this.newUser, 'users')).toPromise();
+      var res =   (await this.http.post(this.newUser, 'users')).toPromise();
       this.router.navigate(['books-list']);
 
    } catch (error) {

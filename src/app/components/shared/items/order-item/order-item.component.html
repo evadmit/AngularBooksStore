@@ -1,0 +1,49 @@
+<mat-card class="example-card">
+
+    <mat-card-actions>
+  
+    </mat-card-actions>
+  
+  
+    <mat-card-content>
+      <div fxLayout="row" fxLayoutAlign="space-between stretch" class="remove-btn">
+        <h3>№ {{orderItem.order.id}}</h3>
+        <h3>date: {{orderItem.order.createdAt}}</h3>
+        <div>      
+           <button mat-mini-fab   matTooltip="Approve">
+          <mat-icon>check_circle</mat-icon>
+        </button>
+        <button mat-mini-fab   matTooltip="Decline">
+          <mat-icon>clear</mat-icon>
+        </button>
+        </div>
+       
+      </div>
+  
+  
+      <div>
+        <h3 *ngIf="price">
+        {{price}}
+        </h3>
+  
+      </div>
+      <mat-expansion-panel (opened)="panelOpenState = true"
+      (closed)="panelOpenState = false">
+<mat-expansion-panel-header>
+<mat-panel-title>
+  <h3>Details</h3>
+</mat-panel-title>
+</mat-expansion-panel-header>
+<div class="card-deck-container"
+fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="space-around stretch">
+<ng-container *ngFor="let orderDetail of orderDetails">
+  <book-item fxFlex="0 1 calc(33.3% - 10px)" [book]="orderDetail.book" [quantity]= "orderDetail.quantity" fxLayout="column" fxLayoutWrap>
+  
+  
+  </book-item>
+  
+  </ng-container>
+</div>
+</mat-expansion-panel>
+    </mat-card-content>
+  </mat-card>

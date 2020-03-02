@@ -1,10 +1,10 @@
 <mat-card class="example-card">
     <mat-card-header>
       <div md-card-avatar class="example-header-image"></div>
-      <mat-card-title>{{item.title}}</mat-card-title>
-      <mat-card-subtitle>{{item.price}}</mat-card-subtitle>
+      <mat-card-title class="title" >{{(item.title.length>6)? (item.title | slice:0:30)+'..':(item.title)}}</mat-card-title>
+      <mat-card-subtitle>{{item.price}} $</mat-card-subtitle>
     </mat-card-header>
-    <img md-card-image src={{item.image}} >
+    <img md-card-image src={{item.image}} height="200px">
     <mat-card-content>
       <p>
         {{item.ganre}}

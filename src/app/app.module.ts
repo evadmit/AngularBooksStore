@@ -22,6 +22,8 @@ import { BookCardItemComponent } from './components/shared/items/book-card-item/
 import { CartItemComponent } from './components/shared/items/cart-item/cart-item.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { HttpClientModule } from '@angular/common/http';
+import { OrderItemComponent } from './components/shared/items/order-item/order-item.component';
+import { BookItemComponent } from './components/shared/items/book-item/book-item.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     BookCardItemComponent,
     CartItemComponent,
-    OrdersComponent
+    OrdersComponent,
+    OrderItemComponent,
+    BookItemComponent
   ],
   imports: [
     FormsModule, 

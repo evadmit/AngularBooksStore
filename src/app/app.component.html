@@ -4,11 +4,13 @@
   <div>
     <a routerLink="books-list"  target="_blank" class="apptitle">Books Store</a></div>
   <span class="nav-tool-items">
-    <a mat-button routerLink="admin" routerLinkActive="mat-raised-button">Admin</a>
-    <a mat-button routerLink="login" routerLinkActive="mat-raised-button">Log in</a>
-    <a mat-button  routerLink="register" routerLinkActive="mat-raised-button">Register</a>
+    <!-- <h1 *ngIf="currentUser.name"></h1> -->
+    <a mat-button routerLink="admin" routerLinkActive="mat-raised-button" *ngIf="isAdmin">Admin</a>
+    <a mat-button routerLink="login" routerLinkActive="mat-raised-button" *ngIf="!currentUser">Log in</a>
+    <a mat-button  routerLink="register" routerLinkActive="mat-raised-button" *ngIf="!currentUser">Register</a>
     
-    <a  mat-button   matBadge="{{itemsInCart}}" matBadgeColor="accent" routerLink="shopping-cart">  <mat-icon>shopping_cart</mat-icon></a>
+    <a  mat-button   matBadge="{{itemsInCart}}" matBadgeColor="accent"  routerLink="shopping-cart">  <mat-icon>shopping_cart</mat-icon></a>
+    <button  mat-button   matBadgeColor="accent" *ngIf="currentUser" (click)="Logout()">  <mat-icon>keyboard_tab</mat-icon></button>
   
   </span></app-sticky-header>
 <div class="content">

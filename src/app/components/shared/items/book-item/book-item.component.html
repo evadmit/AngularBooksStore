@@ -1,0 +1,23 @@
+<mat-card class="example-card">
+
+    <mat-card-actions>
+  
+    </mat-card-actions>
+  
+  
+    <mat-card-content>
+      <div fxLayout="row" fxLayoutAlign="space-between stretch" class="remove-btn">
+        <h3>{{book.title}}</h3>
+      </div>
+  
+      <img md-card-image src={{book.image}} width="80">
+  
+  
+      <div>
+        <h4 *ngIf="price">
+        {{quantity}} * {{book.price}} = {{price}}
+        </h4>
+  
+      </div>
+    </mat-card-content>
+  </mat-card>

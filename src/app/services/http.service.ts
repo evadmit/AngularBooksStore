@@ -21,11 +21,11 @@ export class HttpService {
   
   }
 
-  public async get(controller:string, id?: number){
+  public async get<T>(controller:string, id?: number){
     if(id){
-      return await this.httpClient.get<any>(`${this.rootUrl}${controller}/${id}`); 
+      return await this.httpClient.get<T>(`${this.rootUrl}${controller}/${id}`); 
     }
-    return await this.httpClient.get<any>(`${this.rootUrl}${controller}`);
+    return await this.httpClient.get<T>(`${this.rootUrl}${controller}`);
   }
 
 }
