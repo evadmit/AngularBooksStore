@@ -3,6 +3,7 @@ import { Book, CartItem } from '../models/BookModels';
 import { CartService } from './cart.service';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { User } from '../models/UserModels';
+import { Order, OrderDetails } from '../models/OrderModels';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,11 @@ export class BackendService {
     this.user = new BehaviorSubject<User>(this.getCurrentUser());
 
    }
+
+  async createOrder(){
+  await this.cartService.createOrder( this.user.value.id);
+     
+  }
 
   getCurrentUser(): User {
       let user: User = JSON.parse(localStorage.getItem('user'));

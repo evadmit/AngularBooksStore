@@ -11,7 +11,6 @@ export class HttpService {
   constructor(private httpClient: HttpClient) { }
 
   public async post(model:any, controller:string){
-    console.log("post")
     try {
         var res = await this.httpClient.post<any>(`${this.rootUrl}${controller}`, model);
     return res;

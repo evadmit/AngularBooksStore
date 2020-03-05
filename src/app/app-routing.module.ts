@@ -10,10 +10,12 @@ import { RegisterComponent } from './components/register/register.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { OrdersComponent } from './components/orders/orders.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 const routes: Routes = [
 {path:'', redirectTo:'/login', pathMatch:'full'},
+{path:'profile', component:ProfileComponent},
 {path:'orders', component:OrdersComponent},
 {path:'aboutus', component:AboutusComponent},
 {path:'admin', component:AdminComponent},

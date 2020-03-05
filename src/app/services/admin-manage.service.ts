@@ -20,7 +20,7 @@ export class AdminManageService{
    }
 
    async getAllOrders(): Promise< Array<OrderItem>>{
-       console.log("get or update")
+    
         let orders: Array<Order> = await (await this.http.get<Array<Order>>('orders')).toPromise();
         let allOrderDets: Array<OrderDetails> = await (await this.http.get<Array<OrderDetails>>('orderDetails?_expand=book')).toPromise();
       
@@ -41,6 +41,15 @@ export class AdminManageService{
 
     }
 
+    async rejectOrder(target_order: OrderItem){
+       var order =  target_order.order;
+        order.status = OrdeStatus.rejected;
+        await this.http.patch('orders',order.id,order);
+        await this.updateAllValues();
+
+    }
+
+
     async updateAllValues(): Promise<void> {
      await   this.updateOrders();
       }
@@ -49,6 +58,7 @@ export class AdminManageService{
     return this.allOrders.asObservable();
   }
   async updateOrders(): Promise<void> {
+    console.log("updating")
     this.allOrders.next(await this.getAllOrders());
   }
 

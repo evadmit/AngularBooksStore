@@ -28,7 +28,6 @@ export class OrderItemComponent implements OnInit {
     this.orderItem.orderDetails.forEach(item =>{
       sum+= item.book.price*item.quantity;
     })
-    console.log(this.orderItem)
     this.price = "total: " + sum;
     this.isConfirmed = this.orderItem.order.status == OrdeStatus.completed;
   }

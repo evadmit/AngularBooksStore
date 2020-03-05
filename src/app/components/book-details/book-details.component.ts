@@ -14,7 +14,7 @@ export class BookDetailsComponent implements OnInit {
   private sub :any;
   ngOnInit() {
    this.sub= this.route.params.subscribe((params: Book) => this.book = params);
-  console.log(this.book)
+
   }
   ngOnDestroy() {
     this.sub.unsubscribe();

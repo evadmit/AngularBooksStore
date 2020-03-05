@@ -27,27 +27,25 @@ export class OrdersComponent implements OnInit {
 
   async getAllOrders(){
 
-    console.log("getAllOrders...")
     var _orders = await this.admService.getAllOrders();
     this.orders = _orders;
-    console.log("all orders", this.orders)
   }
 
   cancelOrder(order: OrderItem): void {
-    console.log('emmiter works', order)
+  
     const dialogRef = this.dialog.open(RemoveOrderDialog, {
       width: '250px',
       data: {reason: this.reason, order: order}
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
       this.reason = result;
     });
   }
 
   
   async confirmOrder(order: OrderItem): Promise<void> {
-   this.admService.confirmOrder(order);
+   await this.admService.confirmOrder(order);
+   await this.admService.updateAllValues();
   }
 }

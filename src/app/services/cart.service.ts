@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import {  BehaviorSubject, Observable } from 'rxjs';
 import { CartItem, Book } from '../models/BookModels';
+import { OrderDetails, Order } from '../models/OrderModels';
+import { HttpService } from './http.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +14,7 @@ export class CartService {
   totalSum: BehaviorSubject<number>;
   currentCart: BehaviorSubject<CartItem[]>;
 
-  constructor() {
+  constructor(private httpService: HttpService) {
     this.itemsInCart = new BehaviorSubject<number>(this.getCountItems());
     this.totalSum = new BehaviorSubject<number>(this.getTotalCartSum());
     this.currentCart = new BehaviorSubject<CartItem[]>(this.getCurrentCart());
@@ -89,8 +91,7 @@ export class CartService {
       }
     }
 
-    console.log("shopping cart ", localStorage.getItem('cart'));
-    this.updateAllValues();
+   this.updateAllValues();
   }
 
   removeFromCart(cartItem: CartItem) {
@@ -132,6 +133,7 @@ export class CartService {
   observeCart(): Observable<CartItem[]> {
     return this.currentCart.asObservable();
   }
+  
   updateCart(): void {
     this.currentCart.next(this.getCurrentCart());
   }
@@ -167,5 +169,18 @@ export class CartService {
     }
     return totalPrice;
   }
+
+  async createOrder(userId: number){
+    var order = new Order();
+    order.userId= userId;
+
+     (await this.httpService.post(order, 'orders')).subscribe()
+
+    this.currentCart.value.forEach(async element => {
+      (await this.httpService.post(new OrderDetails(element.selectedBook.id, element.quantity, order.id, element.quantity*element.selectedBook.price, element.selectedBook), 'orderDetails')).subscribe();
+    });
+
+
+}
 
 }

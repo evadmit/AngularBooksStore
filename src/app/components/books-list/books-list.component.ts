@@ -10,9 +10,7 @@ import { HttpService } from 'src/app/services/http.service';
 })
 export class BooksListComponent implements OnInit {
 
-  books: Array<Book> = [
-    {id:1, available:5, ganre:"test", title: "test", description:"Kobe Bryant is one of the most accomplished and r All-Star Game MVP awards, among many other achievements. Bryant retired in 2016. He lives in Southern California with his wife, Vanessa, and their three daughters. He still claims he’s never been beaten one-on-one.", author:"", price:25.5, image:"https://i.postimg.cc/G4bd0dsp/2016-02-12-00-05-05-910db405-6bd4-4a5d-bce7-c2e3135dc5e6-449070.png"},
-    ];
+  books: Array<Book> ;
   
   constructor(private _route: ActivatedRoute, private _router: Router, private http: HttpService) { }
 
