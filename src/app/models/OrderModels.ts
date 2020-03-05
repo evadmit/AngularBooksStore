@@ -5,6 +5,7 @@ export class Order {
     userId: number;
     createdAt: string;
     status: OrdeStatus= OrdeStatus.new;
+    adminComment : string = "";
 }
 
 export class OrderDetails {

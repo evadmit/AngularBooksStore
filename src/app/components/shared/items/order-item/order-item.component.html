@@ -10,10 +10,10 @@
         <h3>№ {{orderItem.order.id}}</h3>
         <h3>date: {{orderItem.order.createdAt}}</h3>
         <div>      
-           <button mat-mini-fab   matTooltip="Approve">
+           <button [disabled]='isConfirmed' mat-mini-fab (click)="onConfirmClick.emit()"   matTooltip="Approve">
           <mat-icon>check_circle</mat-icon>
         </button>
-        <button mat-mini-fab   matTooltip="Decline">
+        <button mat-mini-fab  (click)="onCancelClick.emit()"  matTooltip="Decline">
           <mat-icon>clear</mat-icon>
         </button>
         </div>

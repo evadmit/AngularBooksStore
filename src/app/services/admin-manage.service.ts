@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpService } from './http.service';
-import { Order, OrderItem, OrderDetails } from '../models/OrderModels';
+import { Order, OrderItem, OrderDetails, OrdeStatus } from '../models/OrderModels';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
@@ -8,11 +9,18 @@ import { Order, OrderItem, OrderDetails } from '../models/OrderModels';
 export class AdminManageService{
 
     fullOrders: Array<OrderItem> ;
+    allOrders: BehaviorSubject<OrderItem[]>=new BehaviorSubject<OrderItem[]>([]);;
     constructor(private http: HttpService) {  
         this.fullOrders = new Array<OrderItem>();
-    }
+        this.getAllOrders().then((data) => {
+
+            this.allOrders.next(data);
+
+        });
+   }
 
    async getAllOrders(): Promise< Array<OrderItem>>{
+       console.log("get or update")
         let orders: Array<Order> = await (await this.http.get<Array<Order>>('orders')).toPromise();
         let allOrderDets: Array<OrderDetails> = await (await this.http.get<Array<OrderDetails>>('orderDetails?_expand=book')).toPromise();
       
@@ -24,8 +32,24 @@ export class AdminManageService{
    return this.fullOrders;
     }
 
-    async confirmOrder(id: number){
-        var target_order = this.fullOrders.find(it => it.order.id == id);
+    async confirmOrder(target_order: OrderItem){
+       var order =  target_order.order;
+        order.status = OrdeStatus.completed;
+        order.adminComment = "order confirmed";
+        await this.http.patch('orders',order.id,order);
+        await this.updateAllValues();
 
     }
+
+    async updateAllValues(): Promise<void> {
+     await   this.updateOrders();
+      }
+    
+  observeOrders(): Observable<OrderItem[]> {
+    return this.allOrders.asObservable();
+  }
+  async updateOrders(): Promise<void> {
+    this.allOrders.next(await this.getAllOrders());
+  }
+
 }

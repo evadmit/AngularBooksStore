@@ -24,6 +24,8 @@ import { OrdersComponent } from './components/orders/orders.component';
 import { HttpClientModule } from '@angular/common/http';
 import { OrderItemComponent } from './components/shared/items/order-item/order-item.component';
 import { BookItemComponent } from './components/shared/items/book-item/book-item.component';
+import { RemoveOrderDialog } from './components/shared/items/dialogs/remove-order-dialog/remove-order-dialog.component';
+import { MatDialogModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -42,10 +44,13 @@ import { BookItemComponent } from './components/shared/items/book-item/book-item
     CartItemComponent,
     OrdersComponent,
     OrderItemComponent,
-    BookItemComponent
+    BookItemComponent,
+    RemoveOrderDialog
   ],
+  entryComponents:[RemoveOrderDialog],
   imports: [
     FormsModule, 
+    MatDialogModule,
     ReactiveFormsModule ,
     FlexLayoutModule ,
     BrowserModule,
