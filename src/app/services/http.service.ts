@@ -20,6 +20,16 @@ export class HttpService {
   
   }
 
+  public async delete(controller:string,id:number){
+    try {
+        var res = await this.httpClient.delete(`${this.rootUrl}${controller}/${id}`);
+    return res;
+    } catch (error) {
+      console.log("error",error)
+    }
+  
+  }
+
   public async get<T>(controller:string, id?: number){
     if(id){
       return await this.httpClient.get<T>(`${this.rootUrl}${controller}/${id}`); 

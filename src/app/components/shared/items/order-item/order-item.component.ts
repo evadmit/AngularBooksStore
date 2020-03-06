@@ -1,8 +1,7 @@
-import { Component, OnInit, Input, Inject, Output, EventEmitter } from '@angular/core';
-import { OrderItem, OrderDetails, OrdeStatus } from 'src/app/models/OrderModels';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { OrderItem, OrderDetails, OrderStatus } from 'src/app/models/OrderModels';
 
-import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { RemoveOrderDialog } from '../dialogs/remove-order-dialog/remove-order-dialog.component';
+import {MatDialog} from '@angular/material/dialog';
 
 
 @Component({
@@ -29,7 +28,7 @@ export class OrderItemComponent implements OnInit {
       sum+= item.book.price*item.quantity;
     })
     this.price = "total: " + sum;
-    this.isConfirmed = this.orderItem.order.status == OrdeStatus.completed;
+    this.isConfirmed = this.orderItem.order.status == OrderStatus.completed;
   }
 
 

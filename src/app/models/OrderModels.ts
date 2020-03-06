@@ -5,7 +5,7 @@ export class Order {
     id: number = Math.floor(Math.random() * (999999 - 100000)) + 100000;;
     userId: number;
     createdAt: string = formatDate(new Date(), 'MMM d, y, h:mm:ss a', 'en') ;
-    status: OrdeStatus= OrdeStatus.new;
+    status: OrderStatus= OrderStatus.new;
     adminComment : string = "";
 }
 
@@ -38,7 +38,7 @@ export class OrderItem{
     order: Order;
     orderDetails: Array<OrderDetails>;
 }
-export enum OrdeStatus{
+export enum OrderStatus{
     new,
     rejected,
     completed

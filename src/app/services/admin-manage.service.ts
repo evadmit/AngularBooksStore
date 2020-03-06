@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpService } from './http.service';
-import { Order, OrderItem, OrderDetails, OrdeStatus } from '../models/OrderModels';
+import { Order, OrderItem, OrderDetails, OrderStatus } from '../models/OrderModels';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
@@ -19,9 +19,10 @@ export class AdminManageService{
         });
    }
 
-   async getAllOrders(): Promise< Array<OrderItem>>{
+   async getAllOrders(userId?: number): Promise< Array<OrderItem>>{
     
-        let orders: Array<Order> = await (await this.http.get<Array<Order>>('orders')).toPromise();
+        var ordersString: string = userId?`orders/?userId=${userId}`:'orders';
+        let orders: Array<Order> = await (await this.http.get<Array<Order>>(ordersString)).toPromise();
         let allOrderDets: Array<OrderDetails> = await (await this.http.get<Array<OrderDetails>>('orderDetails?_expand=book')).toPromise();
       
         orders.forEach(async element => {
@@ -34,7 +35,7 @@ export class AdminManageService{
 
     async confirmOrder(target_order: OrderItem){
        var order =  target_order.order;
-        order.status = OrdeStatus.completed;
+        order.status = OrderStatus.completed;
         order.adminComment = "order confirmed";
         await this.http.patch('orders',order.id,order);
         await this.updateAllValues();
@@ -43,8 +44,19 @@ export class AdminManageService{
 
     async rejectOrder(target_order: OrderItem){
        var order =  target_order.order;
-        order.status = OrdeStatus.rejected;
+        order.status = OrderStatus.rejected;
         await this.http.patch('orders',order.id,order);
+        await this.updateAllValues();
+
+    }
+
+    async deleteOrder(target_order: OrderItem){
+
+      target_order.orderDetails.forEach(async element => {
+        await this.http.delete('orderDetails',element.id);
+      });
+      
+        await this.http.delete('orders',target_order.order.id,);
         await this.updateAllValues();
 
     }

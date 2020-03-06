@@ -1,0 +1,14 @@
+.notification{
+    color: gray;
+}
+.color-completed {
+    color: #91bfa5;
+  }
+  
+  .color-new {
+    color: teal;
+  }
+  
+  .color-rejected {
+    color: #ff4081;
+  }

@@ -12,7 +12,7 @@ export class BooksListComponent implements OnInit {
 
   books: Array<Book> ;
   
-  constructor(private _route: ActivatedRoute, private _router: Router, private http: HttpService) { }
+  constructor( private _router: Router, private http: HttpService) { }
 
   async ngOnInit() {
     await this.getAllBoks();

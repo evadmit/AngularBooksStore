@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Book } from 'src/app/models/BookModels';
 import { ActivatedRoute, Router } from '@angular/router';
-import { BackendService } from 'src/app/services/backend.service';
 import { CartService } from 'src/app/services/cart.service';
 
 @Component({
@@ -21,7 +20,6 @@ export class BookCardItemComponent implements OnInit {
 }
 
   displayDetails(book: Book){
-    var k = book;
     this._router.navigate(['/book-details', book])
   }
 }

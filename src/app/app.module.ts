@@ -27,6 +27,7 @@ import { BookItemComponent } from './components/shared/items/book-item/book-item
 import { RemoveOrderDialog } from './components/shared/items/dialogs/remove-order-dialog/remove-order-dialog.component';
 import { MatDialogModule } from '@angular/material';
 import { ProfileComponent } from './components/profile/profile.component';
+import { UserOrderItemComponent } from './components/shared/items/user-order-item/user-order-item.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     OrderItemComponent,
     BookItemComponent,
     RemoveOrderDialog,
-    ProfileComponent
+    ProfileComponent,
+    UserOrderItemComponent
   ],
   entryComponents:[RemoveOrderDialog],
   imports: [

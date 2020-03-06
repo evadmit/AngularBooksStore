@@ -1,1 +1,19 @@
-<p>profile works!</p>
+<mat-card>
+   <mat-card-title>Welcome, {{user.name}}!</mat-card-title> 
+   <mat-card-subtitle>Your orders:</mat-card-subtitle>
+   <mat-card-content>
+      <div class="card-deck-container"
+fxLayout="column" fxLayoutGap="32px" fxLayoutAlign="space-around stretch">
+
+      <ng-container *ngFor="let order of orders">
+         <user-order-item fxFlex="0 1 calc(33.3% - 32px)"  [orderItem]="order"  fxLayout="column" fxLayoutWrap >
+         
+         
+         </user-order-item>
+         
+         </ng-container>
+
+      </div>
+   </mat-card-content>
+
+   </mat-card>

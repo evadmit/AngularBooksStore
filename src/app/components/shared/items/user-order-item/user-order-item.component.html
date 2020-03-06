@@ -1,0 +1,49 @@
+<mat-card class="example-card">
+
+    <mat-card-actions>
+  
+    </mat-card-actions>
+  
+  
+    <mat-card-content>
+      <div fxLayout="row" fxLayoutAlign="space-between stretch" class="remove-btn">
+        <h3>№ {{orderItem.order.id}}</h3>
+        <h3>date: {{orderItem.order.createdAt}}</h3>
+        <div>   
+            <h3>status: </h3>  
+            <h3  [ngClass]="{
+                'color-completed': orderItem.order.status === 2, 
+                'color-new': orderItem.order.status === 0, 
+                'color-rejected': orderItem.order.status === 1}">{{status}}</h3>
+
+        </div>
+       
+      </div>
+  <button mat-stroked-button [disabled]="isConfirmed" color="accent" >Cancel Order</button>
+  <h5 *ngIf="isConfirmed"  class="notification">The order was already placed. You can't cancel it now</h5>
+      <div>
+        <h3 *ngIf="price">
+        {{price}}
+        </h3>
+  
+      </div>
+      <mat-expansion-panel (opened)="panelOpenState = true"
+      (closed)="panelOpenState = false">
+<mat-expansion-panel-header>
+<mat-panel-title>
+  <h3>Details</h3>
+</mat-panel-title>
+</mat-expansion-panel-header>
+<div class="card-deck-container"
+fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="space-around stretch">
+<ng-container *ngFor="let orderDetail of orderDetails">
+  <book-item fxFlex="0 1 calc(33.3% - 10px)" [book]="orderDetail.book" [quantity]= "orderDetail.quantity" fxLayout="column" fxLayoutWrap>
+  
+  
+  </book-item>
+  
+  </ng-container>
+</div>
+</mat-expansion-panel>
+    </mat-card-content>
+  </mat-card>

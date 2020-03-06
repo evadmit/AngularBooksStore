@@ -1,10 +1,7 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CartItem } from 'src/app/models/BookModels';
 import { CartService } from 'src/app/services/cart.service';
-import { Order, OrderDetails } from 'src/app/models/OrderModels';
 import { HttpService } from 'src/app/services/http.service';
-import { pipe } from 'rxjs';
-import { DatePipe, formatDate } from '@angular/common';
 import { BackendService } from 'src/app/services/backend.service';
 
 @Component({

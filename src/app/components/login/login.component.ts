@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { moveIn, fallIn } from '../shared/router.animation';
 import { HttpService } from 'src/app/services/http.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/models/UserModels';
