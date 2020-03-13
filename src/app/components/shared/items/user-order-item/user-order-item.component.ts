@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { OrderItem, OrderDetails, OrderStatus } from 'src/app/models/OrderModels';
+import { AdminManageService } from 'src/app/services/admin-manage.service';
 
 @Component({
   selector: 'user-order-item',
@@ -10,6 +11,7 @@ export class UserOrderItemComponent implements OnInit {
 
   @Input() orderItem: OrderItem;
 
+  @Output() onCancelClick = new EventEmitter();
  
   orderDetails: Array<OrderDetails>;
   price:string;

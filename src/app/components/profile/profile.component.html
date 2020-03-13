@@ -6,7 +6,7 @@
 fxLayout="column" fxLayoutGap="32px" fxLayoutAlign="space-around stretch">
 
       <ng-container *ngFor="let order of orders">
-         <user-order-item fxFlex="0 1 calc(33.3% - 32px)"  [orderItem]="order"  fxLayout="column" fxLayoutWrap >
+         <user-order-item fxFlex="0 1 calc(33.3% - 32px)" (onCancelClick)="cancelOrder(order)"   [orderItem]="order"  fxLayout="column" fxLayoutWrap >
          
          
          </user-order-item>

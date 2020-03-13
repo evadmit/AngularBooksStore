@@ -19,7 +19,7 @@
         </div>
        
       </div>
-  <button mat-stroked-button [disabled]="isConfirmed" color="accent" >Cancel Order</button>
+  <button mat-stroked-button [disabled]="isConfirmed" color="accent" (click)="onCancelClick.emit()" >Cancel Order</button>
   <h5 *ngIf="isConfirmed"  class="notification">The order was already placed. You can't cancel it now</h5>
       <div>
         <h3 *ngIf="price">

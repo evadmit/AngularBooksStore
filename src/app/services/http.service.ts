@@ -20,9 +20,10 @@ export class HttpService {
   
   }
 
-  public async delete(controller:string,id:number){
+  public  delete(controller:string,id:number){
     try {
-        var res = await this.httpClient.delete(`${this.rootUrl}${controller}/${id}`);
+        var res = this.httpClient.delete(`${this.rootUrl}${controller}/${id}`).subscribe(reslt=> console.log("delete res in http", reslt));
+       
     return res;
     } catch (error) {
       console.log("error",error)

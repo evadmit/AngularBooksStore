@@ -9,6 +9,7 @@ import { OrderItem } from 'src/app/models/OrderModels';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
+
 export class ProfileComponent implements OnInit {
 
   constructor(private backandService: BackendService, private adminService: AdminManageService) { }
@@ -18,7 +19,17 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
   this.user = this.backandService.getCurrentUser();
 
-  this.adminService.getAllOrders(this.user.id).then(res => this.orders = res);
+  this.adminService.observeUserOrders().subscribe((value)=> {
+    this.orders = value;
+  })
+
+  this.adminService.getAllOrdersForUser(this.user.id).then(res => this.orders = res);
   }
 
+
+  
+  async cancelOrder(order: OrderItem): Promise<void> {
+  
+    await this.adminService.deleteOrder(order);
+  }
 }
