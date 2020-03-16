@@ -52,20 +52,6 @@
   ],
   "books": [
     {
-      "id": 2,
-      "bookCount": 0,
-      "price": "3333",
-      "image": "https://images-na.ssl-images-amazon.com/images/I/51NXWG-RplL._SX379_BO1,204,203,200_.jpg",
-      "isbn": "9781449331818",
-      "title": "Learning JavaScript design Patterns",
-      "subtitle": "A JavaScript and jQuery developer's Guide",
-      "author": "Addy Osmani",
-      "published": "2012-07-01T00:00:00.000Z",
-      "publisher": "O'Reilly Media",
-      "pages": 254,
-      "description": "With Learning JavaScript design Patterns, you'll learn how to write beautiful, structured, and maintainable JavaScript by applying classical and modern design patterns to the language. If you want to keep your code efficient, more manageable, and up-to-date with the latest best practices, this book is for you."
-    },
-    {
       "id": 3,
       "bookCount": 5,
       "price": "500",
@@ -171,7 +157,36 @@
       "userId": 1,
       "createdAt": "2020-02-03",
       "adminComment": "order confirmed"
+    },
+    {
+      "id": 646758,
+      "createdAt": "Mar 16, 2020, 3:59:39 PM",
+      "status": 0,
+      "adminComment": "",
+      "userId": 150
     }
   ],
-  "orderDetails": []
+  "orderDetails": [
+    {
+      "id": 227365,
+      "bookId": 3,
+      "quantity": 3,
+      "orderId": 646758,
+      "sum": 1500,
+      "book": {
+        "id": 3,
+        "bookCount": 5,
+        "price": "500",
+        "image": "https://cdn1.ozone.ru/multimedia/1010617388.jpg",
+        "isbn": "9781449365035",
+        "title": "Speaking JavaScript",
+        "subtitle": "An In-depth Guide for Programmers",
+        "author": "Axel Rauschmayer",
+        "published": "2014-02-01T00:00:00.000Z",
+        "publisher": "O'Reilly Media",
+        "pages": 460,
+        "description": "Like it or not, JavaScript is everywhere these days-from browser to server to mobile-and now you, too, need to learn the language or dive deeper than you have. This concise book guides you into and through JavaScript, written by a veteran programmer who once found himself in the same position."
+      }
+    }
+  ]
 }

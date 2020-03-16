@@ -20,7 +20,6 @@ import { BackendService } from './services/backend.service';
 import { StickyHeaderComponent } from './components/shared/sticky-header/sticky-header.component';
 import { BookCardItemComponent } from './components/shared/items/book-card-item/book-card-item.component';
 import { CartItemComponent } from './components/shared/items/cart-item/cart-item.component';
-import { OrdersComponent } from './components/orders/orders.component';
 import { HttpClientModule } from '@angular/common/http';
 import { OrderItemComponent } from './components/shared/items/order-item/order-item.component';
 import { BookItemComponent } from './components/shared/items/book-item/book-item.component';
@@ -28,28 +27,33 @@ import { RemoveOrderDialog } from './components/shared/items/dialogs/remove-orde
 import { MatDialogModule } from '@angular/material';
 import { ProfileComponent } from './components/profile/profile.component';
 import { UserOrderItemComponent } from './components/shared/items/user-order-item/user-order-item.component';
+import { OrdersComponent } from './components/admin/orders/orders.component';
+import { BookManagementItemComponent } from './components/shared/items/book-management-item/book-management-item.component';
+import { BooksManagementComponent } from './components/admin/books-management/books-management.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    AdminComponent,
+    OrdersComponent,
+    BooksManagementComponent,
     LoginComponent,
     BooksListComponent,
     RegisterComponent,
     ShoppingCartComponent,
     BookDetailsComponent,
-    AdminComponent,
     HeaderComponent,
     StickyHeaderComponent,
     AboutusComponent,
     FooterComponent,
     BookCardItemComponent,
     CartItemComponent,
-    OrdersComponent,
     OrderItemComponent,
     BookItemComponent,
     RemoveOrderDialog,
     ProfileComponent,
-    UserOrderItemComponent
+    UserOrderItemComponent,
+    BookManagementItemComponent
   ],
   entryComponents:[RemoveOrderDialog],
   imports: [

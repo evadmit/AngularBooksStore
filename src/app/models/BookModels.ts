@@ -1,5 +1,6 @@
 export class Book {
     id: number;
+    isBought: boolean = false;
     title: string;
     ganre: string;
     description: string;

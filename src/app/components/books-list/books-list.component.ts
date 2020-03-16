@@ -10,21 +10,21 @@ import { HttpService } from 'src/app/services/http.service';
 })
 export class BooksListComponent implements OnInit {
 
-  books: Array<Book> ;
-  
-  constructor( private _router: Router, private http: HttpService) { }
+  books: Array<Book>;
+
+  constructor(private _router: Router, private http: HttpService) { }
 
   async ngOnInit() {
     await this.getAllBoks();
   }
 
-  async getAllBoks(): Promise< Array<Book>>{
-    this.books = await ( await this.http.get<Array<Book>>('books')).toPromise();
-  
-return this.books;
-}
+  async getAllBoks(): Promise<Array<Book>> {
+    this.books = await (await this.http.get<Array<Book>>('books')).toPromise();
 
-  displayDetails(book: Book){
+    return this.books;
+  }
+
+  displayDetails(book: Book) {
     var k = book;
     this._router.navigate(['/book-details', book])
   }

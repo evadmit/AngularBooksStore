@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   password: string = '';
   loginUser: User;
   isShow = false;
-  constructor(private http: HttpService, private route: ActivatedRoute, private router: Router, private backendService:BackendService) {
+  constructor(private http: HttpService, private route: ActivatedRoute, private router: Router, private backendService: BackendService) {
 
   }
 
@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
     try {
       var res = (await (await this.http.get<Array<User>>('users')).toPromise());
       console.log(res)
-      
+
       res.forEach(e => {
         if (e.email == this.email && e.password == this.password) {
           this.loginUser = e;

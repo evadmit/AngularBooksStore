@@ -1,0 +1,39 @@
+<mat-card class="example-card">
+
+
+  <mat-card-content>
+    <div fxLayout="row" fxLayoutAlign="space-between stretch" class="remove-btn">
+      <h3>№ {{bookItem.id}}</h3>
+      <h3>{{bookItem.title}}</h3>
+      <div fxLayout="row">
+        <button mat-mini-fab (click)="save()" matTooltip="Approve">
+          <mat-icon>check_circle</mat-icon>
+        </button>
+        <div matTooltip="You can't delete. This book was ordered." [matTooltipDisabled]="!bookItem.isBought">
+          <button [disabled]='bookItem.isBought' mat-mini-fab (click)="onDeleteClick.emit()" matTooltip="Delete">
+            <mat-icon>clear</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-label>Quantity</mat-label>
+        <input matInput [placeholder]="bookItem.bookCount" [(ngModel)]="bookItem.bookCount"
+          [ngModelOptions]="{standalone: true}" [value]="bookItem.bookCount">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Price $</mat-label>
+        <input matInput [placeholder]="bookItem.price" [(ngModel)]="bookItem.price"
+          [ngModelOptions]="{standalone: true}" [value]="bookItem.price">
+      </mat-form-field>
+
+
+
+    </form>
+  </mat-card-content>
+</mat-card>

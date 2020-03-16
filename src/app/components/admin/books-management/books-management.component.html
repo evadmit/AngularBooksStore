@@ -1,0 +1,10 @@
+<div class="card-deck-container"
+fxLayout="column" fxLayoutGap="32px" fxLayoutAlign="space-around stretch">
+<ng-container *ngFor="let book of books">
+<book-management-item fxFlex="0 1 calc(33.3% - 32px)"  [bookItem]="book" (onSaveClick)="saveChanges(book)" (onDeleteClick)="deleteBook(book)" fxLayout="column" fxLayoutWrap >
+
+
+</book-management-item>
+
+</ng-container>
+</div>

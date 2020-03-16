@@ -9,8 +9,9 @@ import { BookDetailsComponent } from './components/book-details/book-details.com
 import { RegisterComponent } from './components/register/register.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { AdminComponent } from './components/admin/admin.component';
-import { OrdersComponent } from './components/orders/orders.component';
+import { OrdersComponent } from './components/admin/orders/orders.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { BooksManagementComponent } from './components/admin/books-management/books-management.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
 {path:'aboutus', component:AboutusComponent},
 {path:'admin', component:AdminComponent},
 {path:'books-list', component:BooksListComponent},
+{path:'books-management', component:BooksManagementComponent},
 {path:'book-details', component:BookDetailsComponent},
 {path:'shopping-cart', component:ShoppingCartComponent},
 {path:'login', component:LoginComponent},

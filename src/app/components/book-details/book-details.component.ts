@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Book} from '../../models/BookModels'
+import { Book } from '../../models/BookModels'
 import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-book-details',
@@ -10,10 +10,10 @@ export class BookDetailsComponent implements OnInit {
 
   constructor(private route: ActivatedRoute) { }
 
-  book:Book;
-  private sub :any;
+  book: Book;
+  private sub: any;
   ngOnInit() {
-   this.sub= this.route.params.subscribe((params: Book) => this.book = params);
+    this.sub = this.route.params.subscribe((params: Book) => this.book = params);
 
   }
   ngOnDestroy() {

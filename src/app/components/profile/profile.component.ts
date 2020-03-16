@@ -13,23 +13,23 @@ import { OrderItem } from 'src/app/models/OrderModels';
 export class ProfileComponent implements OnInit {
 
   constructor(private backandService: BackendService, private adminService: AdminManageService) { }
-  
-  user:User;
+
+  user: User;
   orders: OrderItem[];
   ngOnInit() {
-  this.user = this.backandService.getCurrentUser();
+    this.user = this.backandService.getCurrentUser();
 
-  this.adminService.observeUserOrders().subscribe((value)=> {
-    this.orders = value;
-  })
+    this.adminService.observeUserOrders().subscribe((value) => {
+      this.orders = value;
+    })
 
-  this.adminService.getAllOrdersForUser(this.user.id).then(res => this.orders = res);
+    this.adminService.getAllOrdersForUser(this.user.id).then(res => this.orders = res);
   }
 
 
-  
+
   async cancelOrder(order: OrderItem): Promise<void> {
-  
+
     await this.adminService.deleteOrder(order);
   }
 }
